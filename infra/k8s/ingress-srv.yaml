@@ -14,3 +14,7 @@ spec:
             backend:
               serviceName: ticketing-auth-srv
               servicePort: 3000
+          - path: /?(.*)
+            backend:
+              serviceName: ticketing-client-srv
+              servicePort: 3000
