@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import {NotAuthorisedError} from "../errors/not-authorised-error";
+import {NotAuthorisedError} from "@rc-tickets/common";
 
 export const requireAuth = (req: Request, res: Response, next: NextFunction) => {
     if (!req.currentUser) {
