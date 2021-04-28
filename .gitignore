@@ -8,3 +8,5 @@
 /common/.gitignore
 /tickets/node_modules/
 /tickets/package-lock.json
+/orders/node_modules/
+/orders/package-lock.json
