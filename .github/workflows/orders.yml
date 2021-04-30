@@ -36,3 +36,5 @@ jobs:
     - name: Test
       working-directory: ./orders
       run: npm test
+      env:
+        CI: true
