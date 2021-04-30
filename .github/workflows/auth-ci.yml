@@ -1,14 +1,11 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Orders Microservice CI
+name: Auth Microservice CI
 
 on:
   workflow_dispatch:
   push:
     branches: [ master ]
     paths:
-      - "orders/**"
+      - "auth/**"
   pull_request:
     branches: [ master ]
 
@@ -28,11 +25,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Clean project
-      working-directory: ./orders
+      working-directory: ./auth
       run: npm ci
     - name: Build
-      working-directory: ./orders
+      working-directory: ./auth
       run: npm run build --if-present
     - name: Test
-      working-directory: ./orders
+      working-directory: ./auth
       run: npm run test:ci

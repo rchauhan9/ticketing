@@ -1,11 +1,7 @@
 /auth/node_modules/
-/auth/package-lock.json
 /client/node_modules/
-/client/package-lock.json
-/common/package-lock.json
 /common/node_modules/
 /common/build/
 /common/.gitignore
 /tickets/node_modules/
-/tickets/package-lock.json
 /orders/node_modules/
