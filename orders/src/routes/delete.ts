@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import {NotAuthorisedError, NotFoundError, requireAuth} from "@rc-tickets/common";
 import {Order, OrderStatus} from "../models/order";
 import {natsWrapper} from "../nats-wrapper";
-import {OrderCancelledPublisher} from "../events/order-cancelled-publisher";
+import {OrderCancelledPublisher} from "../events/publishers/order-cancelled-publisher";
 
 const router = express.Router();
 
