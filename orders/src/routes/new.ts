@@ -51,7 +51,8 @@ router.post('/api/orders', requireAuth, [
             id: ticket.id,
             price: ticket.price
         },
-        userId: order.userId
+        userId: order.userId,
+        version: order.version
     });
 
     res.status(201).send(order);
