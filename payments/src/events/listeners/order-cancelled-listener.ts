@@ -2,7 +2,7 @@ import {Message} from 'node-nats-streaming';
 import {Listener, OrderCancelledEvent, Subjects} from "@rc-tickets/common";
 import {paymentsService} from "./queue-group-name";
 import {Order} from "../../models/order";
-import {OrderStatus} from "../../../../common/src";
+import {OrderStatus} from "@rc-tickets/common";
 
 export class OrderCancelledListener extends Listener<OrderCancelledEvent> {
     subject: Subjects.OrderCancelled = Subjects.OrderCancelled;
