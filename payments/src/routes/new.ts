@@ -2,7 +2,7 @@ import express, { Request,  Response } from 'express';
 import { body } from 'express-validator';
 import {requireAuth, validateRequest, BadRequestError, NotFoundError, NotAuthorisedError} from "@rc-tickets/common";
 import { Order } from "../models/order";
-import {OrderStatus} from "../../../common/src";
+import {OrderStatus} from "@rc-tickets/common";
 import { stripe } from "../stripe";
 
 const router = express.Router();
