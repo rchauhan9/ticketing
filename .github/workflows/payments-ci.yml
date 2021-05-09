@@ -31,5 +31,7 @@ jobs:
       working-directory: ./payments
       run: npm run build --if-present
     - name: Test
+      env:
+        STRIPE_KEY: ${{ secrets.STRIPE_KEY }}
       working-directory: ./payments
       run: npm run test:ci
