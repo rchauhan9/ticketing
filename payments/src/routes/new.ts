@@ -5,6 +5,8 @@ import { Order } from "../models/order";
 import {OrderStatus} from "@rc-tickets/common";
 import { stripe } from "../stripe";
 import { Payment } from "../models/payment";
+import {PaymentCreatedPublisher} from "../events/publishers/payment-created-publisher";
+import {natsWrapper} from "../nats-wrapper";
 
 const router = express.Router();
 
@@ -38,7 +40,13 @@ router.post('/api/payments', requireAuth, [body('token').not().isEmpty(), body('
     });
     await payment.save();
 
-    res.status(201).send({success: true});
+    await new PaymentCreatedPublisher(natsWrapper.client).publish({
+        id: payment.id,
+        orderId: payment.orderId,
+        stripeId: payment.stripeId
+    });
+
+    res.status(201).send(payment);
 
 });
 
